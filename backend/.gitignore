@@ -1,0 +1,15 @@
+# Node.js backend
+node_modules/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema/OS
+.DS_Store
+Thumbs.db
+
+# Build/output frontend (se houver)
+dist/
+build/
+

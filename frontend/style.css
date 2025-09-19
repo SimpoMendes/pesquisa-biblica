@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Cardo', serif;
+  background: #f4ecd8;
+  color: #3b2f2f;
+}
+
+/* Header fixo */
+.hidder-fixed {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: #3e2723;
+  color: #f7e1a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  margin-top: 0px;
+}
+
+/* Sidebar estilo pergaminho */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(to bottom, #5d4037, #3e2723);
+  color: #f9f5f0;
+  padding: 20px;
+  overflow: hidden;
+  border-right: 3px solid #bb781f;
+  position: relative;
+
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 3%, black 97%, transparent 100%);
+}
+
+.sidebar ul {
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d4af37 rgba(93,64,55,0.3);
+  scroll-behavior: smooth;
+}
+
+.sidebar ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar ul::-webkit-scrollbar-track {
+  background: rgba(93,64,55,0.3);
+  border-radius: 4px;
+}
+
+.sidebar ul::-webkit-scrollbar-thumb {
+  background-color: #d4af37;
+  border-radius: 4px;
+  border: 2px solid rgba(93,64,55,0.3);
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 8px 0;
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar li i {
+  margin-right: 8px;
+  color: #f7e1a0;
+}
+
+.sidebar li:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.sidebar li.active {
+  background: #f7e1a0;
+  color: #3e2723;
+  font-weight: bold;
+  border-left: 4px solid #d4af37;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+}
+
+.content h1 {
+  color: #5d4037;
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 8px;
+}
+
+.results {
+  margin-top: 20px;
+  padding: 40px;
+  background: rgba(255, 250, 240, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-height: 70vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.verse {
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  border-left: 5px solid #d4af37;
+  background: rgba(255,248,230,0.9);
+  border-radius: 6px;
+  line-height: 1.6;
+  font-size: 1.05em;
+  position: relative;
+}
+
+.verse::before {
+  content: "\f02d";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d4af37;
+}
+
+.verse strong {
+  color: #5d4037;
+}
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #5d4037;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f4ecd8;
+  border-top: 3px solid #5d4037;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
