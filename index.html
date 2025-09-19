@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Bíblica</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="hidder" class="hidder-fixed">
+    <h1>Misnistrações Bíblica</h1>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Palavras-chave Populares</h2>
+      <ul id="keyword-list"></ul>
+    </aside>
+
+    <main class="content">
+      <h1>Pesquisa Mistrações por Palavra Chave</h1>
+      <p>Clique em uma palavra-chave para ver ministrações relacionadas.</p>
+
+      <!-- Spinner de carregamento -->
+      <div id="loading" class="loading" style="display:none;">
+        <div class="spinner"></div>
+        <span>Carregando ministração...</span>
+      </div>
+
+      <div id="results" class="results"></div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
