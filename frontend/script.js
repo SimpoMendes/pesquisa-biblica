@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordList.appendChild(li);
   });
 
-  async function buscarVersiculos(palavra) {
-    // Chama a rota do backend que retorna o JSON
-    const res = await fetch('/ministracoes');
-    if (!res.ok) throw new Error(`Erro no backend (${res.status})`);
+  async function buscarMinistracao(palavra) {
+    const res = await fetch('ministracoes.json');
     const data = await res.json();
     return data[palavra] || [];
   }
@@ -37,26 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsDiv.innerHTML = "";
 
     try {
-      const versiculos = await buscarVersiculos(palavra);
+      const ministracao = await buscarMinistracao(palavra);
       loadingDiv.style.display = "none";
 
-      if (!versiculos.length) {
+      if (!ministracao.length) {
         resultsDiv.innerHTML = `<p>Nenhuma ministração encontrada para "${palavra}".</p>`;
         return;
       }
 
       resultsDiv.innerHTML = "";
-      versiculos.forEach(item => {
+      ministracao.forEach(item => {
         const verseEl = document.createElement("div");
         verseEl.className = "verse";
-
-        // Transformar quebras de linha em parágrafos
-        const formattedText = item.text
-          .split(/\n+/)        // divide por qualquer sequência de \n
-          .map(par => `<p>${par.trim()}</p>`)
-          .join('');
-
-        verseEl.innerHTML = `<strong>${item.reference}</strong>${formattedText}`;
+        verseEl.innerHTML = `<strong>${item.reference || ""}</strong>: ${item.text || ""}`;
         resultsDiv.appendChild(verseEl);
       });
 
