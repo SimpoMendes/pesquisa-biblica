@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Função para buscar ministração do JSON local
   async function buscarMinistracao(palavra) {
     try {
-      const res = await fetch('ministracoes.json'); // JSON local na mesma pasta
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      const res = await fetch('pesquisa-biblica/ministracoes.json'); // caminho ajustado
+      if (!res.ok) throw new Error(`Erro HTTP! Status: ${res.status}`);
       const data = await res.json();
       return data[palavra] || [];
     } catch (err) {
       console.error("Erro ao buscar JSON:", err);
-      return [];
+      throw new Error("Não foi possível acessar o arquivo de ministrações.");
     }
   }
 
@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } catch (err) {
       loadingDiv.style.display = "none";
-      console.error(err);
       resultsDiv.innerHTML = `<p>Erro ao acessar a ministração: ${err.message}</p>`;
     }
   });
