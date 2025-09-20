@@ -5,27 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     "luz","verdade","alegria","vida","coração","coragem"
   ];
 
-  const ministracoes = {
-    "amor": [
-      {
-        "reference": "1 Coríntios 13:4-7, João 15:12, 1 João 4:7-8, Romanos 12:9-10",
-        "text": "O amor é a essência da vida cristã e o reflexo do caráter de Deus em nós..."
-      }
-    ],
-    "fé": [
-      {
-        "reference": "Hebreus 11:1, Mateus 17:20, Marcos 11:22-24, Romanos 10:17",
-        "text": "A fé é confiança em Deus mesmo sem ver. É o alicerce da vida espiritual..."
-      }
-    ]
-    // adicione os demais tópicos aqui...
-  };
-
   const keywordList = document.getElementById("keyword-list");
   const resultsDiv = document.getElementById("results");
   const loadingDiv = document.getElementById("loading");
 
-  // Preenche a sidebar
+  // Preenche a sidebar com as palavras-chave
   popularKeywords.forEach(palavra => {
     const li = document.createElement("li");
     li.dataset.keyword = palavra;
@@ -33,8 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordList.appendChild(li);
   });
 
+  // Função para buscar ministração do JSON via fetch
+  async function buscarMinistracao(palavra) {
+    try {
+      // Caminho ajustado para GitHub Pages
+      const res = await fetch('./ministracoes.json'); 
+      if (!res.ok) throw new Error(`Erro HTTP! Status: ${res.status}`);
+      const data = await res.json();
+      return data[palavra] || [];
+    } catch (err) {
+      console.error("Erro ao buscar JSON:", err);
+      throw new Error("Não foi possível acessar o arquivo de ministrações.");
+    }
+  }
+
   // Clique em uma palavra-chave
-  keywordList.addEventListener("click", (e) => {
+  keywordList.addEventListener("click", async (e) => {
     if (e.target.tagName !== "LI" && e.target.tagName !== "I") return;
     const li = e.target.tagName === "LI" ? e.target : e.target.parentElement;
     const palavra = li.dataset.keyword;
@@ -42,22 +40,29 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordList.querySelectorAll("li").forEach(i => i.classList.remove("active"));
     li.classList.add("active");
 
-    resultsDiv.innerHTML = "";
     loadingDiv.style.display = "flex";
+    resultsDiv.innerHTML = "";
 
-    setTimeout(() => { // simula loading
+    try {
+      const ministracao = await buscarMinistracao(palavra);
       loadingDiv.style.display = "none";
-      const ministracao = ministracoes[palavra] || [];
+
       if (!ministracao.length) {
         resultsDiv.innerHTML = `<p>Nenhuma ministração encontrada para "${palavra}".</p>`;
         return;
       }
+
+      resultsDiv.innerHTML = "";
       ministracao.forEach(item => {
         const verseEl = document.createElement("div");
         verseEl.className = "verse";
-        verseEl.innerHTML = `<strong>${item.reference}</strong>: ${item.text}`;
+        verseEl.innerHTML = `<strong>${item.reference || ""}</strong>: ${item.text || ""}`;
         resultsDiv.appendChild(verseEl);
       });
-    }, 300); // 0,3s de loading
+
+    } catch (err) {
+      loadingDiv.style.display = "none";
+      resultsDiv.innerHTML = `<p>Erro ao acessar a ministração: ${err.message}</p>`;
+    }
   });
 });

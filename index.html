@@ -2,27 +2,38 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Pesquisa Bíblica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ministrações Bíblicas</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; display: flex; }
-    #sidebar { width: 200px; background: #f4f4f4; padding: 10px; }
-    #keyword-list li { cursor: pointer; padding: 5px; list-style: none; }
-    #keyword-list li.active { background: #ddd; font-weight: bold; }
-    #content { flex: 1; padding: 10px; }
-    #loading { display: none; }
-    .verse { margin-bottom: 15px; }
-  </style>
 </head>
 <body>
-  <div id="sidebar">
-    <ul id="keyword-list"></ul>
+  <header class="header">
+    <h1>Biblioteca de Ministrações</h1>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Palavras-chave Populares</h2>
+      <ul id="keyword-list"></ul>
+    </aside>
+
+    <main class="content">
+      <h1>Pesquisa de Ministrações</h1>
+      <p>Clique em uma palavra-chave para ver a ministração completa.</p>
+
+      <div id="loading" class="loading" style="display:none;">
+        <div class="spinner"></div>
+        <span>Carregando ministração...</span>
+      </div>
+
+      <div id="results" class="results"></div>
+    </main>
   </div>
-  <div id="content">
-    <div id="loading">Carregando...</div>
-    <div id="results"></div>
-  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
