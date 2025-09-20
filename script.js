@@ -18,11 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   async function buscarMinistracao(palavra) {
-    const res = await fetch('https://raw.githubusercontent.com/<seu-usuario>/<repo>/main/ministracoes.json');
+  const res = await fetch('https://raw.githubusercontent.com/SimpoMendes/pesquisa-biblica/main/ministracoes.json');
+  const data = await res.json();
 
-    const data = await res.json();
-    return data[palavra] || [];
-  }
+  // força a busca em minúsculas
+  return data[palavra.toLowerCase()] || [];
+}
+
 
   keywordList.addEventListener("click", async (e) => {
     if (e.target.tagName !== "LI" && e.target.tagName !== "I") return;
