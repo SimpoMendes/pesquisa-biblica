@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsDiv = document.getElementById("results");
   const loadingDiv = document.getElementById("loading");
 
-  // Preenche sidebar
+  // Preenche a sidebar com as palavras-chave
   popularKeywords.forEach(palavra => {
     const li = document.createElement("li");
     li.dataset.keyword = palavra;
@@ -17,23 +17,30 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordList.appendChild(li);
   });
 
+  // Função para buscar ministração do JSON local
   async function buscarMinistracao(palavra) {
-    // 🔥 Busca direto do GitHub Pages
-    const res = await fetch('https://cors-anywhere.herokuapp.com/https://raw.githubusercontent.com/SimpoMendes/pesquisa-biblica/main/ministracoes.json');
-
-    if (!res.ok) throw new Error("Não foi possível carregar o arquivo JSON");
-    const data = await res.json();
-    return data[palavra] || [];
+    try {
+      const res = await fetch('ministracoes.json'); // JSON local na mesma pasta
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      const data = await res.json();
+      return data[palavra] || [];
+    } catch (err) {
+      console.error("Erro ao buscar JSON:", err);
+      return [];
+    }
   }
 
+  // Clique em uma palavra-chave
   keywordList.addEventListener("click", async (e) => {
     if (e.target.tagName !== "LI" && e.target.tagName !== "I") return;
     const li = e.target.tagName === "LI" ? e.target : e.target.parentElement;
     const palavra = li.dataset.keyword;
 
+    // Marcar ativo
     keywordList.querySelectorAll("li").forEach(i => i.classList.remove("active"));
     li.classList.add("active");
 
+    // Exibir loading
     loadingDiv.style.display = "flex";
     resultsDiv.innerHTML = "";
 
@@ -46,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // Exibir cada versículo ou trecho da ministração
       resultsDiv.innerHTML = "";
       ministracao.forEach(item => {
         const verseEl = document.createElement("div");
