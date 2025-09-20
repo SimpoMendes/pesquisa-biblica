@@ -17,10 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordList.appendChild(li);
   });
 
-  // Função para buscar ministração do JSON local
+  // Função para buscar ministração do JSON via fetch
   async function buscarMinistracao(palavra) {
     try {
-      const res = await fetch('pesquisa-biblica/ministracoes.json'); // caminho ajustado
+      // Use caminho relativo ao HTML, funciona no GitHub Pages
+      const res = await fetch('./ministracoes.json'); 
       if (!res.ok) throw new Error(`Erro HTTP! Status: ${res.status}`);
       const data = await res.json();
       return data[palavra] || [];
