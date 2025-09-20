@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsDiv = document.getElementById("results");
   const loadingDiv = document.getElementById("loading");
 
-  // Preenche a sidebar com as palavras-chave
+  // Preenche sidebar
   popularKeywords.forEach(palavra => {
     const li = document.createElement("li");
     li.dataset.keyword = palavra;
@@ -17,30 +17,27 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordList.appendChild(li);
   });
 
-  // Função para buscar ministração do JSON local
   async function buscarMinistracao(palavra) {
     try {
-      const res = await fetch('ministracoes.json'); // JSON local na mesma pasta
+      // Caminho relativo para o JSON
+      const res = await fetch('./ministracoes.json');
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
       return data[palavra] || [];
     } catch (err) {
-      console.error("Erro ao buscar JSON:", err);
-      return [];
+      console.error(err);
+      throw new Error("Não foi possível acessar o arquivo de ministrações.");
     }
   }
 
-  // Clique em uma palavra-chave
   keywordList.addEventListener("click", async (e) => {
     if (e.target.tagName !== "LI" && e.target.tagName !== "I") return;
     const li = e.target.tagName === "LI" ? e.target : e.target.parentElement;
     const palavra = li.dataset.keyword;
 
-    // Marcar ativo
     keywordList.querySelectorAll("li").forEach(i => i.classList.remove("active"));
     li.classList.add("active");
 
-    // Exibir loading
     loadingDiv.style.display = "flex";
     resultsDiv.innerHTML = "";
 
@@ -53,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Exibir cada versículo ou trecho da ministração
       resultsDiv.innerHTML = "";
       ministracao.forEach(item => {
         const verseEl = document.createElement("div");
@@ -64,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } catch (err) {
       loadingDiv.style.display = "none";
-      console.error(err);
       resultsDiv.innerHTML = `<p>Erro ao acessar a ministração: ${err.message}</p>`;
     }
   });
