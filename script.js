@@ -9,6 +9,97 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsDiv = document.getElementById("results");
   const loadingDiv = document.getElementById("loading");
 
+  // Incluindo todos os textos diretamente no objeto
+  const ministracoes = {
+  "amor": [
+    {
+      "reference": "1 Coríntios 13:4-7",
+      "text": "O amor é paciente e bondoso, não se vangloria nem se orgulha. Ele transforma corações, aproxima pessoas e gera unidade. Devemos exercitar o amor em cada ação, perdoando, ajudando e oferecendo esperança. Amar é colocar o outro acima de nós mesmos, refletindo o amor de Deus. Nos momentos de conflito, o amor promove reconciliação e paz, iluminando as trevas do ódio. Amar também exige sacrifício, paciência e humildade. Ele fortalece o caráter, molda decisões e transforma crises em oportunidades de crescimento. Amar é agir com integridade, servir com dedicação e reconhecer a presença divina em cada ser. O amor nos conecta com Deus e é base da fé prática. Ele inspira compaixão, justiça e misericórdia, mesmo diante das dificuldades. Amar é ouvir, compreender, apoiar e instruir. É demonstrar bondade sem esperar retorno, ajudando o próximo com generosidade. O amor verdadeiro cultiva relações saudáveis, promove reconciliação e gera alegria. Ele é a força que sustenta comunidades, ensina paciência e promove humildade. Amar é viver segundo os princípios divinos, oferecendo cuidado, atenção e respeito. É o caminho para a paz interior e espiritualidade plena."
+    }
+  ],
+  "fé": [
+    {
+      "reference": "Hebreus 11:1",
+      "text": "A fé é a certeza das coisas que esperamos e a convicção das que não vemos. Ela conecta o coração a Deus, fortalecendo-nos diante das dificuldades. Ter fé é confiar no plano divino mesmo quando não compreendemos as circunstâncias. A fé transforma desafios em oportunidades, mantendo-nos firmes e resilientes. Ela exige disciplina espiritual, oração constante e estudo da Palavra. A fé nos ajuda a superar dúvidas, medos e fraquezas humanas. Ela orienta decisões, guia atitudes e fortalece relacionamentos. A fé verdadeira gera coragem para enfrentar provações, perseverança para não desistir e esperança inabalável. Ela nos aproxima do propósito divino, iluminando caminhos de justiça e amor. A fé constrói caráter, disciplina emocional e paz interior. Ela é fundamento para experimentar milagres, provisão e bênçãos de Deus. Confiar plenamente em Deus gera segurança e confiança na vida diária. A fé inspira outros a também confiar e caminhar com Deus. Ela nos ensina paciência, humildade e confiança, mesmo em tempos difíceis. A fé verdadeira se manifesta em ações, palavras e pensamentos. Ela é ancoragem para a alma, refúgio nos momentos de incerteza e guia para a vida plena."
+    }
+  ],
+  "esperança": [
+    {
+      "reference": "Romanos 15:13",
+      "text": "A esperança é âncora da alma, sustentando-nos nos momentos difíceis. Ela conecta-nos ao futuro que Deus preparou, mantendo confiança em Suas promessas. A esperança gera coragem, paciência e resiliência, mesmo em adversidades. Ela transforma sofrimento em aprendizado, ansiedade em fé e dúvida em confiança. Ter esperança significa esperar em Deus e não se desesperar pelas circunstâncias. Ela fortalece a mente e o espírito, inspirando perseverança e gratidão. A esperança está enraizada na Palavra de Deus, garantindo cuidado, proteção e bênçãos. Ela ajuda a enxergar oportunidades escondidas e caminhos de restauração. Cultivar esperança significa reconhecer que cada dificuldade tem propósito. Ela orienta decisões, acalma o coração e dá sentido à vida. A esperança verdadeira é inabalável, mesmo diante de perdas ou frustrações. Ela inspira outros a confiar no amor e na fidelidade de Deus. Esperança fortalece a fé, promove alegria e gera força interior. Ela ensina paciência, perseverança e confiança no agir divino. A esperança ilumina o caminho, renova o espírito e promove crescimento pessoal. Ela é um refúgio seguro e um guia para viver com propósito."
+    }
+  ],
+  "perdão": [
+    {
+      "reference": "Efésios 4:32",
+      "text": "O perdão liberta, abrindo caminho para a paz interior e reconciliação. Perdoar não significa esquecer, mas liberar o ofensor do peso da culpa. O perdão é um ato de amor, alinhado à vontade de Deus. Ele quebra correntes de amargura, raiva e ressentimento, promovendo cura emocional. Perdoar fortalece relacionamentos e promove entendimento. Ele exige humildade, empatia e compreensão das limitações humanas. O perdão é um exercício diário que começa com reconhecer a necessidade de perdoar. Ele liberta a alma, permitindo viver sem rancor e com alegria. A Bíblia ensina a perdoar repetidamente, assim como Deus nos perdoa. O perdão transforma conflitos em oportunidades de crescimento e aprendizado. Ele nos aproxima de Deus e reflete Sua graça e compaixão. Praticar o perdão promove harmonia familiar, social e espiritual. Perdoar inclui orar pelo bem do outro, mesmo quando não merece. Ele protege a saúde emocional e espiritual. O perdão é libertação, cura e caminho de santidade. Ele exige coragem, paciência e fé. O perdão é força que restaura vidas, promove reconciliação e amor genuíno."
+    }
+  ],
+  "sabedoria": [
+    {
+      "reference": "Tiago 1:5",
+      "text": "A sabedoria é dom de Deus, guiando-nos em decisões corretas e justas. Ela vai além do conhecimento, envolvendo discernimento, prudência e compreensão profunda. Buscar sabedoria é buscar a vontade divina e viver em harmonia com princípios eternos. Ela protege do erro, da impulsividade e de escolhas prejudiciais. A sabedoria transforma dificuldades em aprendizado e crescimento espiritual. A verdadeira sabedoria começa com o temor a Deus. Ela permite aconselhar, liderar e influenciar com justiça e amor. A sabedoria é prática, aplicada em relacionamentos, trabalho e comunhão com Deus. Ela exige humildade, paciência e reflexão. A sabedoria fortalece o caráter e molda atitudes. Receber sabedoria aumenta discernimento e capacidade de resolver conflitos. Ela ensina a ouvir, aprender e agir com integridade. Buscar sabedoria continuamente é cultivar maturidade espiritual e moral. Ela ilumina a vida, guiando decisões e escolhas. A sabedoria é reflexo do caráter de Deus, trazendo paz e segurança. Ela promove equilíbrio, discernimento e estabilidade emocional. A sabedoria verdadeira transforma pensamentos, atitudes e relações. Ela nos conduz à justiça, à prudência e à bondade. A sabedoria divina é fonte de sucesso, paz e felicidade duradoura."
+    }
+  ],
+  "graça": [
+    {
+      "reference": "Efésios 2:8-9",
+      "text": "A graça é dom imerecido de Deus, nos salvando sem depender de obras humanas. Ela nos fortalece, nos reconcilia com Deus e nos capacita a viver segundo Sua vontade. A graça nos ensina humildade, gratidão e compaixão. Ela transforma erros em aprendizado e falhas em oportunidades de crescimento. Reconhecer a graça promove perdão, paciência e misericórdia. Ela nos dá liberdade de viver sem culpa e medo. A graça guia decisões, molda caráter e transforma relacionamentos. Receber a graça nos aproxima de Deus e nos inspira a abençoar outros. Ela nos protege do orgulho, egoísmo e autossuficiência. A graça é luz em momentos de escuridão e força em fraqueza. Ela nos lembra da fidelidade, bondade e amor divino. Viver na graça implica confiar plenamente em Deus. Ela nos capacita a amar, perdoar e servir com alegria. A graça é refúgio, força e esperança constante. Ela promove santidade, retidão e paz interior. A graça verdadeira transforma vidas, atitudes e corações. Ela nos ensina a depender de Deus diariamente. Viver pela graça é experimentar o amor e o poder de Deus em ação. Ela é dom eterno que nos guia, fortalece e salva."
+    }
+  ],
+  "justiça": [
+    {
+      "reference": "Miquéias 6:8",
+      "text": "A justiça é prática do que é correto diante de Deus e dos homens. Ela envolve amar a misericórdia, agir com integridade e caminhar humildemente. Buscar justiça significa defender o que é certo, cuidar dos necessitados e ser honesto em todas as ações. A justiça não é apenas legalidade, mas refletir o caráter de Deus em nossas vidas. Ela promove equilíbrio, equidade e paz social. A verdadeira justiça exige coragem, discernimento e compaixão. Ela protege os vulneráveis e combate a opressão. A justiça é fruto de fé prática, alinhada com princípios divinos. Ela transforma sociedades, fortalece relacionamentos e constrói confiança. A justiça envolve responsabilidade, ação concreta e compromisso ético. Ela guia decisões, atitudes e escolhas, moldando caráter e consciência. Buscar justiça diariamente promove integridade, maturidade espiritual e harmonia. A justiça divina é imparcial, orientada pela verdade e amor. Ela inspira líderes, educa a comunidade e protege os fracos. A prática da justiça nos aproxima de Deus e nos faz agentes de mudança. A justiça verdadeira inclui perdão, misericórdia e retidão. Ela é fundamento da paz, da ordem e da vida plena. Cumprir justiça é honrar a Deus em todas as áreas da vida. A justiça reflete luz, equilíbrio e amor no mundo."
+    }
+  ],
+  "paz": [
+    {
+      "reference": "João 14:27",
+      "text": "A paz é fruto da presença de Deus em nossas vidas. Ela acalma o coração, reduz ansiedade e promove harmonia interior. A paz verdadeira não depende das circunstâncias externas, mas da confiança em Deus. Ela nos dá estabilidade emocional, coragem e discernimento. Buscar paz envolve perdoar, amar e agir com justiça. A paz protege contra conflitos internos e externos, guiando decisões sábias. Ela fortalece relacionamentos, promove reconciliação e gera segurança. A paz divina transcende entendimento humano e nos conecta ao Espírito Santo. Ela transforma medo em confiança, inquietação em serenidade e caos em ordem. A paz promove alegria, gratidão e esperança. Ela inspira ações corretas, pensamento positivo e vida ética. A paz é sinal de maturidade espiritual e comunhão com Deus. Ela nos ajuda a enfrentar adversidades com confiança. A paz verdadeira surge do perdão, fé e amor. Ela nos ensina a confiar, descansar e esperar no agir divino. Cultivar paz significa viver em harmonia com princípios divinos. A paz é refúgio, força e direção na vida. Ela guia caminhos, decisões e relacionamentos. A paz divina transforma vidas, corações e comunidades."
+    }
+  ],
+  "misericórdia": [
+    {
+      "reference": "Lamentações 3:22-23",
+      "text": "A misericórdia é expressão do amor de Deus em ação, renovando e perdoando continuamente. Ela nos ensina a compaixão, paciência e perdão diante das falhas alheias. A misericórdia promove reconciliação, cura e restauração. Ela transforma corações endurecidos e reconstrói relacionamentos. Praticar misericórdia exige empatia, humildade e compreensão. A misericórdia nos liberta do rancor, cultivando paz e gratidão. Ela fortalece a fé, incentiva boas ações e promove justiça temperada com amor. A misericórdia é fonte de bondade, inspiração e liderança ética. Ela nos aproxima de Deus e reflete Seu caráter. A misericórdia verdadeira exige ação concreta, oração e entrega. Ela protege a alma de amargura e ressentimento. A misericórdia ensina paciência, esperança e perseverança. Ela transforma conflitos em aprendizado e crescimento. A misericórdia é atitude diária, contínua e generosa. Ela ilumina o caminho, inspira outros e gera alegria. Praticar misericórdia é viver a vida conforme os princípios de Deus. Ela promove reconciliação, unidade e bondade. A misericórdia fortalece a sociedade, a fé e os relacionamentos. Ela é sinal de maturidade espiritual e amor genuíno."
+    }
+  ],
+  "oração": [
+    {
+      "reference": "Filipenses 4:6",
+      "text": "A oração é comunicação direta com Deus, fonte de conforto e direção. Ela fortalece a fé, promove confiança e permite expressar gratidão, necessidades e arrependimento. A oração transforma corações, acalma emoções e ilumina decisões. Orar continuamente aproxima-nos da presença de Deus e da sabedoria divina. A oração promove discernimento, esperança e coragem em momentos difíceis. Ela fortalece a espiritualidade, disciplina emocional e conexão com o divino. A oração envolve louvor, agradecimento, intercessão e petição. Ela é ferramenta de transformação pessoal e comunitária. Orar ensina humildade, paciência e dependência de Deus. A oração nos protege de preocupações, ansiedade e desânimo. Ela promove reconciliação, perdão e paz interior. A oração fortalece relacionamentos, inspira ações corretas e cultiva gratidão. Orar com fé ativa milagres, renova forças e transforma atitudes. Ela conecta a vida cotidiana com princípios divinos. A oração verdadeira é persistente, sincera e constante. Ela gera confiança, equilíbrio emocional e estabilidade espiritual. A oração nos lembra da fidelidade, amor e cuidado de Deus. Ela fortalece esperança, fé e caráter. Orar é reconhecer a soberania de Deus e alinhar nossa vida à Sua vontade."
+    }
+  ],
+  "humildade": [
+    {
+      "reference": "Filipenses 2:3",
+      "text": "A humildade é reconhecer nossas limitações e depender de Deus. Ela promove relações saudáveis, respeito e empatia. A humildade nos protege do orgulho, egoísmo e arrogância. Ela nos aproxima de Deus e fortalece caráter. Praticar humildade envolve ouvir, aprender e servir sem buscar reconhecimento. Ela inspira bondade, perdão e compaixão. A humildade promove paciência, tolerância e compreensão em conflitos. Ela fortalece a fé, a confiança e a sabedoria. Humildade verdadeira é viver segundo princípios divinos, reconhecendo que todas as bênçãos vêm de Deus. Ela transforma atitudes, decisões e relacionamentos. A humildade ajuda a lidar com críticas e desafios. Ela promove equilíbrio emocional, serenidade e gratidão. Humildade é aceitar orientação divina e buscar crescimento espiritual. Ela nos ensina a valorizar os outros e suas perspectivas. A humildade é sinal de maturidade, fé e amor genuíno. Ela transforma o coração, fortalece a comunidade e promove paz. A prática da humildade inspira e guia outros. Humildade é chave para santidade, obediência e vida plena."
+    }
+  ],
+  "salvação": [
+    {
+      "reference": "João 3:16",
+      "text": "A salvação é dom de Deus, oferecido a todos que creem em Cristo. Ela liberta do pecado, concede vida eterna e aproxima de Deus. Aceitar a salvação transforma o coração, mente e ações. Ela promove arrependimento, fé e compromisso com a verdade divina. A salvação fortalece o espírito, promove paz e esperança. Ela nos guia a viver segundo princípios de amor, justiça e misericórdia. A salvação é sinal do amor de Deus e de Sua fidelidade. Ela transforma relacionamentos, atitudes e decisões. Receber a salvação requer fé, humildade e reconhecimento da necessidade de Deus. Ela nos protege da escravidão do pecado e da desorientação moral. A salvação inspira gratidão, oração e serviço. Ela fortalece a comunidade de fé e promove unidade. Viver a salvação significa seguir Cristo, praticar amor e perdão. Ela gera alegria, confiança e estabilidade espiritual. A salvação é presente eterno que transforma vidas, corações e futuros. Ela oferece esperança, propósito e direção divina. A salvação é caminho para a vida plena e santidade. Ela é fonte de luz, força e segurança. Receber a salvação é aceitar o amor, a graça e a misericórdia de Deus."
+    }
+  ],
+  "bênção": [
+    {
+      "reference": "Números 6:24-26",
+      "text": "A bênção é manifestação do favor e cuidado de Deus. Ela traz proteção, prosperidade e paz. Receber a bênção fortalece fé, esperança e gratidão. A bênção nos guia em decisões, ações e relacionamentos. Ela promove alegria, estabilidade e confiança. A bênção divina transforma dificuldades em aprendizado e crescimento. Cultivar a bênção envolve obedecer, confiar e valorizar a orientação de Deus. Ela fortalece caráter, discernimento e sabedoria. A bênção inspira generosidade, amor e compaixão. Ela protege de perigos, confusões e injustiças. A bênção promove saúde espiritual, emocional e física. Ela é fruto da fidelidade, graça e misericórdia de Deus. Receber bênção implica responsabilidade, gratidão e serviço. Ela influencia comunidades, familiares e amigos. A bênção fortalece esperança, fé e coragem. Ela é luz em momentos de escuridão e dificuldade. Cultivar bênção é viver em harmonia com princípios divinos. Ela é fonte de alegria, paz e crescimento espiritual. A bênção transforma vidas e promove santidade."
+    }
+  ],
+  "santidade": [
+    {
+      "reference": "1 Pedro 1:16",
+      "text": "A santidade é viver separado do pecado e em conformidade com a vontade de Deus. Ela envolve pureza, integridade e obediência. A santidade transforma atitudes, pensamentos e ações. Ela fortalece caráter, fé e discernimento. Viver em santidade promove paz, harmonia e confiança em Deus. A santidade exige disciplina, oração e estudo da Palavra. Ela protege de tentações, erros e influências negativas. Cultivar santidade envolve humildade, serviço e amor ao próximo. Ela promove justiça, misericórdia e compaixão. A santidade é reflexo do caráter de Deus em nossas vidas. Ela transforma relacionamentos, comunidades e ambientes. Viver santamente gera respeito, confiança e credibilidade. A santidade inspira outros a buscar vida reta. Ela fortalece propósito, esperança e confiança na direção divina. A santidade promove equilíbrio emocional, espiritual e social. Ela exige perseverança, fé e compromisso diário. A santidade conduz à vida eterna e ao cumprimento do propósito divino. Ela é caminho para experimentar a presença e bênçãos de Deus. Cultivar santidade é viver em luz, amor e verdade. Ela é a expressão máxima da devoção e fé verdadeira."
+    }
+  ]
+}
+
+    // Continue para as demais palavras-chave "sabedoria", "graça", "justiça", etc.
+  
+
   // Preenche a sidebar com as palavras-chave
   popularKeywords.forEach(palavra => {
     const li = document.createElement("li");
@@ -17,18 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordList.appendChild(li);
   });
 
-  // Função para buscar ministração do JSON via fetch
+  // Função para buscar ministração do objeto
   async function buscarMinistracao(palavra) {
-    try {
-      // Caminho ajustado para GitHub Pages
-      const res = await fetch('./ministracoes.json'); 
-      if (!res.ok) throw new Error(`Erro HTTP! Status: ${res.status}`);
-      const data = await res.json();
-      return data[palavra] || [];
-    } catch (err) {
-      console.error("Erro ao buscar JSON:", err);
-      throw new Error("Não foi possível acessar o arquivo de ministrações.");
-    }
+    return ministracoes[palavra] || [];
   }
 
   // Clique em uma palavra-chave
@@ -37,9 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const li = e.target.tagName === "LI" ? e.target : e.target.parentElement;
     const palavra = li.dataset.keyword;
 
+    // Marcar ativo
     keywordList.querySelectorAll("li").forEach(i => i.classList.remove("active"));
     li.classList.add("active");
 
+    // Exibir loading
     loadingDiv.style.display = "flex";
     resultsDiv.innerHTML = "";
 
@@ -52,16 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // Exibir cada versículo ou trecho da ministração
       resultsDiv.innerHTML = "";
       ministracao.forEach(item => {
         const verseEl = document.createElement("div");
         verseEl.className = "verse";
-        verseEl.innerHTML = `<strong>${item.reference || ""}</strong>: ${item.text || ""}`;
+
+        // Quebrando o texto em parágrafos a cada ponto final
+        const sentences = item.text.split(/\. (?=[A-ZÀ-Ú])/);
+        let innerHTML = `<strong>${item.reference}</strong>`;
+        sentences.forEach(sentence => {
+          innerHTML += `<p>${sentence.trim()}.</p>`;
+        });
+
+        verseEl.innerHTML = innerHTML;
         resultsDiv.appendChild(verseEl);
       });
 
     } catch (err) {
       loadingDiv.style.display = "none";
+      console.error(err);
       resultsDiv.innerHTML = `<p>Erro ao acessar a ministração: ${err.message}</p>`;
     }
   });
