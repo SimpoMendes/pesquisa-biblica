@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsDiv = document.getElementById("results");
   const loadingDiv = document.getElementById("loading");
 
+  // Preenche a sidebar com as palavras-chave
   popularKeywords.forEach(palavra => {
     const li = document.createElement("li");
     li.dataset.keyword = palavra;
@@ -16,9 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordList.appendChild(li);
   });
 
+  // Função para buscar ministração do JSON via fetch
   async function buscarMinistracao(palavra) {
     try {
-      const res = await fetch('/pesquisa-biblica/ministracoes.json'); // caminho ajustado
+      // Caminho ajustado para GitHub Pages
+      const res = await fetch('/pesquisa-biblica/ministracoes.json'); 
       if (!res.ok) throw new Error(`Erro HTTP! Status: ${res.status}`);
       const data = await res.json();
       return data[palavra] || [];
@@ -28,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Clique em uma palavra-chave
   keywordList.addEventListener("click", async (e) => {
     if (e.target.tagName !== "LI" && e.target.tagName !== "I") return;
     const li = e.target.tagName === "LI" ? e.target : e.target.parentElement;
