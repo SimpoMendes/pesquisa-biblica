@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function buscarMinistracao(palavra) {
     // 🔥 Busca direto do GitHub Pages
-    const res = await fetch('https://simpmendes.github.io/pesquisa-biblica/ministracoes.json');
+    const res = await fetch('https://cors-anywhere.herokuapp.com/https://raw.githubusercontent.com/SimpoMendes/pesquisa-biblica/main/ministracoes.json');
+
     if (!res.ok) throw new Error("Não foi possível carregar o arquivo JSON");
     const data = await res.json();
     return data[palavra] || [];
