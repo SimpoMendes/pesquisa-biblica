@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   async function buscarMinistracao(palavra) {
-    const res = await fetch('./ministracoes.json'); // Caminho relativo
+    const res = await fetch('https://raw.githubusercontent.com/<seu-usuario>/<repo>/main/ministracoes.json');
+
     const data = await res.json();
     return data[palavra] || [];
   }
