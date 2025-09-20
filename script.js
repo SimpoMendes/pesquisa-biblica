@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function buscarMinistracao(palavra) {
     try {
       // Caminho ajustado para GitHub Pages
-      const res = await fetch('/pesquisa-biblica/ministracoes.json'); 
+      const res = await fetch('./ministracoes.json'); 
       if (!res.ok) throw new Error(`Erro HTTP! Status: ${res.status}`);
       const data = await res.json();
       return data[palavra] || [];
