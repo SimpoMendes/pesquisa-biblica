@@ -18,13 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   async function buscarMinistracao(palavra) {
-  const res = await fetch('https://raw.githubusercontent.com/SimpoMendes/pesquisa-biblica/main/ministracoes.json');
-  const data = await res.json();
-
-  // força a busca em minúsculas
-  return data[palavra.toLowerCase()] || [];
-}
-
+    // 🔥 Busca direto do GitHub Pages
+    const res = await fetch('https://simpmendes.github.io/pesquisa-biblica/ministracoes.json');
+    if (!res.ok) throw new Error("Não foi possível carregar o arquivo JSON");
+    const data = await res.json();
+    return data[palavra] || [];
+  }
 
   keywordList.addEventListener("click", async (e) => {
     if (e.target.tagName !== "LI" && e.target.tagName !== "I") return;
