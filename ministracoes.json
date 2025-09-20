@@ -1,10 +1,202 @@
-
 {
   "amor": [
-    { "reference": "1 Coríntios 13:4", "text": "O amor é paciente, o amor é bondoso..." },
-    { "reference": "João 3:16", "text": "Porque Deus amou o mundo de tal maneira..." }
+    {
+      "reference": "1 Coríntios 13:4-7",
+      "text": "O amor é paciente e bondoso, não se vangloria nem se orgulha. É a essência do caráter cristão, refletindo o amor de Deus em nossas atitudes diárias. Devemos praticar o amor em todas as relações, perdoando e servindo com coração sincero."
+    },
+    {
+      "reference": "João 15:12",
+      "text": "O mandamento de Jesus é que amemos uns aos outros como Ele nos amou. Amar significa cuidar, perdoar, sacrificar e demonstrar misericórdia mesmo diante das dificuldades."
+    }
   ],
   "fé": [
-    { "reference": "Hebreus 11:1", "text": "Ora, a fé é a certeza de coisas que se esperam..." }
+    {
+      "reference": "Hebreus 11:1",
+      "text": "A fé é a certeza daquilo que esperamos e a prova das coisas que não vemos. Ela nos conecta à confiança em Deus e nos dá força para seguir apesar das circunstâncias."
+    },
+    {
+      "reference": "Mateus 17:20",
+      "text": "A fé, mesmo pequena como um grão de mostarda, pode mover montanhas. Confiar em Deus nos permite superar obstáculos que parecem impossíveis de vencer."
+    }
+  ],
+  "esperança": [
+    {
+      "reference": "Romanos 15:13",
+      "text": "Que Deus nos encha de toda alegria e paz, para que abunde a esperança pelo poder do Espírito Santo. A esperança nos mantém firmes, lembrando que o Senhor tem planos de bem para nós."
+    },
+    {
+      "reference": "Jeremias 29:11",
+      "text": "Deus conhece os pensamentos que tem sobre nós: pensamentos de paz e prosperidade. Esperar Nele fortalece o coração diante da incerteza."
+    }
+  ],
+  "perdão": [
+    {
+      "reference": "Efésios 4:32",
+      "text": "Devemos perdoar uns aos outros como Deus nos perdoou em Cristo. O perdão liberta o coração da amargura e promove a reconciliação verdadeira."
+    },
+    {
+      "reference": "Mateus 6:14-15",
+      "text": "Se perdoarmos os outros, também seremos perdoados pelo Pai. O perdão é fundamental para a vida cristã e para a saúde espiritual."
+    }
+  ],
+  "sabedoria": [
+    {
+      "reference": "Tiago 1:5",
+      "text": "Se alguém tem falta de sabedoria, peça-a a Deus, que a todos dá generosamente. A sabedoria divina nos guia em decisões corretas e justas, conduzindo a uma vida plena."
+    },
+    {
+      "reference": "Provérbios 3:13-18",
+      "text": "A sabedoria é mais preciosa que ouro e prata. Aqueles que a buscam encontram caminho de paz, longe de confusão e sofrimento."
+    }
+  ],
+  "graça": [
+    {
+      "reference": "Efésios 2:8-9",
+      "text": "A salvação é dom da graça de Deus, não resultado de obras humanas. Reconhecer a graça nos leva à humildade e à gratidão contínua."
+    },
+    {
+      "reference": "2 Coríntios 12:9",
+      "text": "A graça de Deus nos fortalece na fraqueza. Quando reconhecemos nossas limitações, o poder de Deus se manifesta mais intensamente em nossa vida."
+    }
+  ],
+  "justiça": [
+    {
+      "reference": "Miquéias 6:8",
+      "text": "Deus nos pede que pratiquemos a justiça, amemos a misericórdia e andemos humildemente com Ele. A verdadeira justiça é ação concreta baseada no amor divino."
+    },
+    {
+      "reference": "Isaías 1:17",
+      "text": "Aprender a fazer o bem e buscar a justiça é cumprir a vontade de Deus. A justiça se manifesta no cuidado com o próximo e na defesa do que é correto."
+    }
+  ],
+  "paz": [
+    {
+      "reference": "João 14:27",
+      "text": "Jesus nos deixa a paz, diferente da que o mundo oferece. Essa paz acalma o coração e nos dá confiança mesmo em tempos difíceis."
+    },
+    {
+      "reference": "Filipenses 4:6-7",
+      "text": "Não nos preocupemos com nada, mas apresentemos tudo a Deus em oração. Sua paz guardará nossos corações e mentes, independentemente das circunstâncias."
+    }
+  ],
+  "misericórdia": [
+    {
+      "reference": "Lamentações 3:22-23",
+      "text": "A misericórdia do Senhor é infinita e renovada a cada manhã. Ele nos mostra compaixão mesmo quando falhamos, nos ensinando a sermos misericordiosos também."
+    },
+    {
+      "reference": "Lucas 6:36",
+      "text": "Sejam misericordiosos, assim como o Pai celestial é misericordioso. A misericórdia promove reconciliação e cura espiritual entre as pessoas."
+    }
+  ],
+  "oração": [
+    {
+      "reference": "Filipenses 4:6",
+      "text": "Não estejais ansiosos por coisa alguma, mas apresentai a Deus em oração todas as vossas necessidades. A oração é comunicação com Deus e fonte de conforto e orientação."
+    },
+    {
+      "reference": "1 Tessalonicenses 5:17",
+      "text": "Oremos sem cessar. A prática contínua da oração fortalece nossa fé e mantém-nos conectados com a vontade de Deus."
+    }
+  ],
+  "humildade": [
+    {
+      "reference": "Filipenses 2:3",
+      "text": "Nada façam por ambição egoísta, mas com humildade, considerando os outros superiores a si mesmos. A humildade abre portas para crescimento espiritual e relacionamentos saudáveis."
+    },
+    {
+      "reference": "Tiago 4:6",
+      "text": "Deus resiste aos soberbos, mas dá graça aos humildes. Humildade é reconhecer que dependemos da graça divina."
+    }
+  ],
+  "salvação": [
+    {
+      "reference": "João 3:16",
+      "text": "Deus amou o mundo de tal maneira que deu seu Filho unigênito para que todo aquele que nele crê não pereça, mas tenha a vida eterna. A salvação é dom de Deus para todos os que crêem."
+    },
+    {
+      "reference": "Efésios 2:8",
+      "text": "Pela graça somos salvos mediante a fé. A salvação não depende de obras, mas da confiança no sacrifício de Cristo."
+    }
+  ],
+  "bênção": [
+    {
+      "reference": "Números 6:24-26",
+      "text": "O Senhor te abençoe e te guarde; faça resplandecer o Seu rosto sobre ti. Bênção é proteção, favor e cuidado divino em todas as áreas da vida."
+    },
+    {
+      "reference": "Deuteronômio 28:2",
+      "text": "Todas estas bênçãos virão sobre você e o alcançarão, se obedecer aos mandamentos do Senhor. A obediência é caminho para experimentar a plenitude das bênçãos de Deus."
+    }
+  ],
+  "santidade": [
+    {
+      "reference": "1 Pedro 1:16",
+      "text": "Sede santos, porque Eu sou santo. A santidade é o chamado de Deus para viver separados do pecado e em conformidade com Sua vontade."
+    },
+    {
+      "reference": "Hebreus 12:14",
+      "text": "Segui a paz com todos e a santidade, sem a qual ninguém verá o Senhor. Santidade é um compromisso diário de obediência e pureza espiritual."
+    }
+  ],
+  "luz": [
+    {
+      "reference": "Mateus 5:14-16",
+      "text": "Vós sois a luz do mundo; não se pode esconder uma cidade situada sobre um monte. A luz representa a presença de Deus em nós e nosso testemunho diante dos outros."
+    },
+    {
+      "reference": "Salmo 119:105",
+      "text": "Lâmpada para os meus pés é a tua palavra e luz para o meu caminho. A luz de Deus guia nossa vida e decisões, iluminando a verdade em meio às trevas."
+    }
+  ],
+  "verdade": [
+    {
+      "reference": "João 8:32",
+      "text": "Conhecereis a verdade, e a verdade vos libertará. A verdade de Deus nos liberta de mentiras e nos conduz à vida plena."
+    },
+    {
+      "reference": "Salmo 25:5",
+      "text": "Guia-me na tua verdade e ensina-me, pois és Deus, meu Salvador. Buscar a verdade divina é reconhecer a sabedoria e direção de Deus em todas as situações."
+    }
+  ],
+  "alegria": [
+    {
+      "reference": "Salmo 16:11",
+      "text": "Na tua presença há plenitude de alegria. A verdadeira alegria vem da comunhão com Deus e do reconhecimento de Suas bênçãos diárias."
+    },
+    {
+      "reference": "Filipenses 4:4",
+      "text": "Regozijai-vos sempre no Senhor; outra vez digo, regozijai-vos. A alegria é fruto do Espírito e fortalece a fé em todas as circunstâncias."
+    }
+  ],
+  "vida": [
+    {
+      "reference": "João 10:10",
+      "text": "Eu vim para que tenham vida e a tenham em abundância. A vida em Cristo é plena, com propósito, paz e direção divina."
+    },
+    {
+      "reference": "Gálatas 2:20",
+      "text": "Já estou crucificado com Cristo; e vivo, não mais eu, mas Cristo vive em mim. A verdadeira vida espiritual se encontra na união com Cristo."
+    }
+  ],
+  "coração": [
+    {
+      "reference": "Provérbios 4:23",
+      "text": "Sobre tudo o que se deve guardar, guarda o teu coração, porque dele procedem as fontes da vida. O coração determina nossas ações e pensamentos, devendo ser purificado e direcionado a Deus."
+    },
+    {
+      "reference": "Salmo 51:10",
+      "text": "Cria em mim, ó Deus, um coração puro, e renova em mim um espírito reto. O coração é central na transformação espiritual."
+    }
+  ],
+  "coragem": [
+    {
+      "reference": "Josué 1:9",
+      "text": "Não to mandei eu? Sê forte e corajoso; não temas, nem te espantes, pois o Senhor teu Deus é contigo. Coragem vem da confiança na presença constante de Deus."
+    },
+    {
+      "reference": "2 Timóteo 1:7",
+      "text": "Não nos deu Deus espírito de temor, mas de poder, amor e moderação. A coragem cristã é sustentada pelo Espírito Santo, permitindo enfrentar desafios com fé."
+    }
   ]
 }
