@@ -19,16 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Função para buscar ministração do JSON via fetch
   async function buscarMinistracao(palavra) {
-    try {
-      // Caminho ajustado para GitHub Pages
-      const res = await fetch('./ministracoes.json'); 
-      if (!res.ok) throw new Error(`Erro HTTP! Status: ${res.status}`);
-      const data = await res.json();
-      return data[palavra] || [];
-    } catch (err) {
-      console.error("Erro ao buscar JSON:", err);
-      throw new Error("Não foi possível acessar o arquivo de ministrações.");
-    }
+  try {
+    const res = await fetch('./ministracoes.json'); // caminho relativo
+    if (!res.ok) throw new Error(`Erro HTTP! Status: ${res.status}`);
+    const data = await res.json();
+    return data[palavra] || [];
+  } catch (err) {
+    console.error("Erro ao buscar JSON:", err);
+    throw new Error("Não foi possível acessar o arquivo de ministrações.");
+  }
+}
   }
 
   // Clique em uma palavra-chave
