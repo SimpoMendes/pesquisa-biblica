@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   async function buscarMinistracao(palavra) {
-    const res = await fetch('ministracoes.json');
+    const res = await fetch('./ministracoes.json'); // Caminho relativo
     const data = await res.json();
     return data[palavra] || [];
   }

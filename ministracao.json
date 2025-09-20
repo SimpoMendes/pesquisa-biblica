@@ -1,0 +1,10 @@
+
+{
+  "amor": [
+    { "reference": "1 Coríntios 13:4", "text": "O amor é paciente, o amor é bondoso..." },
+    { "reference": "João 3:16", "text": "Porque Deus amou o mundo de tal maneira..." }
+  ],
+  "fé": [
+    { "reference": "Hebreus 11:1", "text": "Ora, a fé é a certeza de coisas que se esperam..." }
+  ]
+}
